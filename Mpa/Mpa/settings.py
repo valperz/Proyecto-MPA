@@ -58,7 +58,7 @@ ROOT_URLCONF = 'Mpa.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'commons/templates')],
+        'DIRS': [os.path.join(BASE_DIR,'commons/templates'), os.path.join(BASE_DIR,'productos/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,3 +128,8 @@ STATICFILES_DIRS=[
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#config settings.py
+MEDIA_URL = "/archivos/"
+MEDIA_ROOT = BASE_DIR / "archivos"
+
