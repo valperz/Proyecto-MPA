@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{%block extrahead %}
+<title>home</title>
+{% endblock extrahead%}
+{% block content %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Presentacion</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Fecha Creación</th>
+     
+      </tr>
+    </thead>
+    <tbody>
+      {% for producto in page_obj %}
+      <tr>
+        <th scope="row">{{ producto.id }}</th>
+        <td>{{ producto.nombre|upper }}</td>
+        <td>{{ producto.presentacion}}</td>
+        <td>{{ producto.cantidad}}</td>
+        <td>{{ producto.fecha_creacion }}</td>
+       
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock content%}
