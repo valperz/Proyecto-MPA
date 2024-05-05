@@ -12,12 +12,11 @@ class Producto(models.Model):
     cantidad= models.IntegerField()
     fecha_creacion = models.DateTimeField()
 
+
     def __str__(self):
         return self.nombre
     
 class cambio_stock(models.Model):
-    ref_producto= models.ForeignKey(Producto,on_delete=models.CASCADE)
+    nombre = models.ForeignKey(Producto,on_delete=models.CASCADE)
     cantidad=models.IntegerField()
-    tipo_cambio= models.CharField(max_length=20)
     comentario=models.CharField(max_length=100)
-    fecha=models.DateTimeField()
